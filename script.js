@@ -75,6 +75,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Close Modal Logic
+    const btnCloseModal = document.getElementById('btn-close-modal');
+    if (btnCloseModal) {
+        btnCloseModal.addEventListener('click', () => {
+            const paymentModal = document.getElementById('payment-modal');
+            const dashboard = document.getElementById('dashboard-container');
+            if (paymentModal) paymentModal.classList.remove('active');
+            if (dashboard) dashboard.classList.remove('dashboard-blur');
+            // Redirect to home/previous page as requested
+            window.location.href = "https://www.getprodify.pro/home";
+        });
+    }
+
     // Utility: Copy to clipboard
     const copyToClipboard = async (text, btn) => {
         try {
