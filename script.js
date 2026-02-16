@@ -64,6 +64,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCreditsUI();
 
+    // Buy Credits Header Button logic
+    const btnBuyCredits = document.getElementById('btn-buy-credits');
+    if (btnBuyCredits) {
+        btnBuyCredits.addEventListener('click', () => {
+            const paymentModal = document.getElementById('payment-modal');
+            const dashboard = document.getElementById('dashboard-container');
+            if (paymentModal) paymentModal.classList.add('active');
+            if (dashboard) dashboard.classList.add('dashboard-blur');
+        });
+    }
+
     // Utility: Copy to clipboard
     const copyToClipboard = async (text, btn) => {
         try {
