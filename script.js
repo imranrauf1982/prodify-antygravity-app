@@ -83,8 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const dashboard = document.getElementById('dashboard-container');
             if (paymentModal) paymentModal.classList.remove('active');
             if (dashboard) dashboard.classList.remove('dashboard-blur');
-            // Redirect to home/previous page as requested
-            window.location.href = "https://www.getprodify.pro/home";
         });
     }
 
