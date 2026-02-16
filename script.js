@@ -1,4 +1,69 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Credit System Logic
+    let credits = localStorage.getItem('propify_credits');
+    if (credits === null) {
+        credits = 3;
+        localStorage.setItem('propify_credits', credits);
+    } else {
+        credits = parseInt(credits);
+    }
+
+    const updateCreditsUI = () => {
+        const creditDisplay = document.getElementById('credit-count');
+        const paymentModal = document.getElementById('payment-modal');
+        const dashboard = document.getElementById('dashboard-container');
+        const generateBtns = [
+            document.getElementById('btn-generate-meta'),
+            document.getElementById('btn-generate-product'),
+            document.getElementById('btn-analyze-competitor')
+        ];
+
+        if (creditDisplay) creditDisplay.textContent = credits;
+
+        if (credits <= 0) {
+            generateBtns.forEach(btn => { if (btn) btn.disabled = true; });
+            if (paymentModal) paymentModal.classList.add('active');
+            if (dashboard) dashboard.classList.add('dashboard-blur');
+        } else {
+            generateBtns.forEach(btn => { if (btn) btn.disabled = false; });
+            if (paymentModal) paymentModal.classList.remove('active');
+            if (dashboard) dashboard.classList.remove('dashboard-blur');
+        }
+    };
+
+    const useCredit = () => {
+        if (credits <= 0) {
+            updateCreditsUI();
+            return false;
+        }
+        credits--;
+        localStorage.setItem('propify_credits', credits);
+        updateCreditsUI();
+        return true;
+    };
+
+    // Activation Logic (Modal)
+    const btnActivateModal = document.getElementById('btn-activate-modal');
+    const txnInputModal = document.getElementById('txn-id-modal');
+
+    if (btnActivateModal) {
+        btnActivateModal.addEventListener('click', () => {
+            const id = txnInputModal.value.trim();
+            // Internal check for 17 or 19 characters remains, but UI no longer mentions it
+            if (id.length === 17 || id.length === 19) {
+                credits = 500;
+                localStorage.setItem('propify_credits', credits);
+                updateCreditsUI();
+                alert('Success! 500 credits have been added to your account.');
+                txnInputModal.value = '';
+            } else {
+                alert('Invalid Transaction ID. Please ensure you have entered the correct ID from your PayPal receipt.');
+            }
+        });
+    }
+
+    updateCreditsUI();
+
     // Utility: Copy to clipboard
     const copyToClipboard = async (text, btn) => {
         try {
@@ -94,6 +159,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     btnMeta.addEventListener('click', () => {
+        if (!useCredit()) return;
         const niche = document.getElementById('meta-niche').value || 'Store';
         const audience = document.getElementById('meta-audience').value || 'Customers';
         const goal = document.getElementById('meta-goal').value;
@@ -172,6 +238,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const productResults = document.getElementById('product-results');
 
     btnProduct.addEventListener('click', () => {
+        if (!useCredit()) return;
         const name = document.getElementById('prod-name').value || 'New Product';
         const features = document.getElementById('prod-features').value || 'Versatile, high-quality, durable';
         const tone = document.getElementById('prod-tone').value;
@@ -261,6 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const compResults = document.getElementById('competitor-results');
 
     btnComp.addEventListener('click', () => {
+        if (!useCredit()) return;
         const text = document.getElementById('comp-text').value;
 
         if (!text) return alert('Please enter competitor text');

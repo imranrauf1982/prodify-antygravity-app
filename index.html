@@ -17,169 +17,199 @@
 <body>
     <div class="glow-bg"></div>
 
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <i data-lucide="zap" class="logo-icon"></i>
-                <span>Propify AI</span>
+    <div id="dashboard-container">
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <i data-lucide="zap" class="logo-icon"></i>
+                    <span>Propify AI</span>
+                </div>
+                <nav class="nav-links">
+                    <a href="#meta-architect">Meta</a>
+                    <a href="#product-lab">Product Lab</a>
+                    <a href="#competitor">Competitor</a>
+                </nav>
+                <div class="credits">
+                    <span class="credits-label">Credits:</span>
+                    <span class="credits-value" id="credit-count">3</span>
+                    <div class="credits-badge">Pro</div>
+                </div>
             </div>
-            <nav class="nav-links">
-                <a href="#meta-architect">Meta</a>
-                <a href="#product-lab">Product Lab</a>
-                <a href="#competitor">Competitor</a>
-            </nav>
-            <div class="credits">
-                <span class="credits-label">Credits:</span>
-                <span class="credits-value">98</span>
-                <div class="credits-badge">Pro</div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1>Shopify SEO <span class="text-gradient">Growth Engine</span></h1>
+                <p>Generate high-converting, SEO-optimized metadata and product descriptions in seconds.</p>
+            </section>
+
+            <section class="tools-grid">
+                <!-- TOOL 1: STORE META ARCHITECT -->
+                <div class="tool-card" id="meta-architect">
+                    <div class="card-header">
+                        <i data-lucide="layout"></i>
+                        <h2>Store Meta Architect</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <label>Niche</label>
+                            <input type="text" id="meta-niche" placeholder="e.g. Eco-friendly Yoga Gear">
+                        </div>
+                        <div class="input-group">
+                            <label>Target Audience</label>
+                            <input type="text" id="meta-audience" placeholder="e.g. Sustainable lifestyle enthusiasts">
+                        </div>
+
+                        <div class="input-group">
+                            <label>Goal</label>
+                            <select id="meta-goal">
+                                <option value="maximize-sales">Maximize Sales</option>
+                                <option value="seo-traffic">SEO Traffic</option>
+                                <option value="brand-authority">Brand Authority</option>
+                            </select>
+                        </div>
+                        <button class="btn-primary" id="btn-generate-meta">
+                            <span>Generate Meta Tags</span>
+                            <i data-lucide="sparkles"></i>
+                        </button>
+                    </div>
+
+                    <div class="results-container" id="meta-results">
+                        <!-- Results will be injected here -->
+                    </div>
+                </div>
+
+                <!-- TOOL 2: PRODUCT LAB -->
+                <div class="tool-card" id="product-lab">
+                    <div class="card-header">
+                        <i data-lucide="package"></i>
+                        <h2>Product Lab</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <label>Product Name</label>
+                            <input type="text" id="prod-name" placeholder="e.g. ZenFlow Bamboo Mat">
+                        </div>
+                        <div class="input-group">
+                            <label>Key Features</label>
+                            <textarea id="prod-features"
+                                placeholder="e.g. Non-slip, 5mm thickness, biodegradable..."></textarea>
+                        </div>
+                        <div class="input-group">
+                            <label>Target Audience</label>
+                            <input type="text" id="prod-audience" placeholder="Yoga practitioners">
+                        </div>
+                        <div class="input-group">
+                            <label>Tone</label>
+                            <select id="prod-tone">
+                                <option value="Luxury">Luxury</option>
+                                <option value="Minimal">Minimal</option>
+                                <option value="Trendy">Trendy</option>
+                                <option value="Aggressive Sales">Aggressive Sales</option>
+                            </select>
+                        </div>
+                        <button class="btn-primary" id="btn-generate-product">
+                            <span>Generate Product SEO</span>
+                            <i data-lucide="rocket"></i>
+                        </button>
+                    </div>
+                    <div class="results-container" id="product-results">
+                        <!-- Results will be injected here -->
+                    </div>
+                </div>
+
+                <!-- TOOL 3: COMPETITOR INSIGHTS -->
+                <div class="tool-card" id="competitor">
+                    <div class="card-header">
+                        <i data-lucide="search"></i>
+                        <h2>Competitor Insights</h2>
+                    </div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <label>Competitor Product Text</label>
+                            <textarea id="comp-text"
+                                placeholder="Paste competitor description or meta data here..."></textarea>
+                        </div>
+                        <button class="btn-primary" id="btn-analyze-competitor">
+                            <span>Analyze Competitor</span>
+                            <i data-lucide="bar-chart-3"></i>
+                        </button>
+                    </div>
+                    <div class="results-container" id="competitor-results">
+                        <!-- Results will be injected here -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- EXTRA FEATURE: SEO GUIDELINES -->
+            <section class="guidelines">
+                <div class="section-title">
+                    <i data-lucide="info"></i>
+                    <h2>SEO Guidelines</h2>
+                </div>
+                <div class="guidelines-grid">
+                    <div class="guide-item">
+                        <h3>Google Meta Title</h3>
+                        <div class="guide-value">50-60 <span class="unit">chars</span></div>
+                        <p>Ideal length for desktop and mobile visibility.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>Google Meta Description</h3>
+                        <div class="guide-value">140-160 <span class="unit">chars</span></div>
+                        <p>Brief summary to encourage click-through rates.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>Shopify Product Title</h3>
+                        <div class="guide-value">55-70 <span class="unit">chars</span></div>
+                        <p>Best for Shopify search and social sharing.</p>
+                    </div>
+                    <div class="guide-item">
+                        <h3>Product Description</h3>
+                        <div class="guide-value">300+ <span class="unit">words</span></div>
+                        <p>Thorough details help with Google semantic ranking.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Propify AI. Ready for Shopify Brilliance.</p>
+                <div class="social-links">
+                    <i data-lucide="twitter"></i>
+                    <i data-lucide="github"></i>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- PAYMENT MODAL -->
+    <div class="modal-overlay" id="payment-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <i data-lucide="credit-card"></i>
+                <h2>Credits Exhausted</h2>
+                <p>Refill your balance to continue using professional SEO tools.</p>
+            </div>
+            <div class="card-body">
+                <a href="https://paypal.me/Aimoneymaker/9" target="_blank" class="btn-primary"
+                    style="text-decoration: none; margin-bottom: 2rem;">
+                    <span>Pay $9 via PayPal</span>
+                    <i data-lucide="external-link"></i>
+                </a>
+
+                <div class="input-group" style="margin-top: 1rem;">
+                    <label>Transaction ID</label>
+                    <input type="text" id="txn-id-modal" placeholder="Already paid? Add PayPal Transaction ID">
+                </div>
+
+                <button class="btn-primary" id="btn-activate-modal">
+                    <span>Activate 500 Credits</span>
+                    <i data-lucide="zap"></i>
+                </button>
             </div>
         </div>
-    </header>
-
-    <main>
-        <section class="hero">
-            <h1>Shopify SEO <span class="text-gradient">Growth Engine</span></h1>
-            <p>Generate high-converting, SEO-optimized metadata and product descriptions in seconds.</p>
-        </section>
-
-        <section class="tools-grid">
-            <!-- TOOL 1: STORE META ARCHITECT -->
-            <div class="tool-card" id="meta-architect">
-                <div class="card-header">
-                    <i data-lucide="layout"></i>
-                    <h2>Store Meta Architect</h2>
-                </div>
-                <div class="card-body">
-                    <div class="input-group">
-                        <label>Niche</label>
-                        <input type="text" id="meta-niche" placeholder="e.g. Eco-friendly Yoga Gear">
-                    </div>
-                    <div class="input-group">
-                        <label>Target Audience</label>
-                        <input type="text" id="meta-audience" placeholder="e.g. Sustainable lifestyle enthusiasts">
-                    </div>
-
-                    <div class="input-group">
-                        <label>Goal</label>
-                        <select id="meta-goal">
-                            <option value="maximize-sales">Maximize Sales</option>
-                            <option value="seo-traffic">SEO Traffic</option>
-                            <option value="brand-authority">Brand Authority</option>
-                        </select>
-                    </div>
-                    <button class="btn-primary" id="btn-generate-meta">
-                        <span>Generate Meta Tags</span>
-                        <i data-lucide="sparkles"></i>
-                    </button>
-                </div>
-
-                <div class="results-container" id="meta-results">
-                    <!-- Results will be injected here -->
-                </div>
-            </div>
-
-            <!-- TOOL 2: PRODUCT LAB -->
-            <div class="tool-card" id="product-lab">
-                <div class="card-header">
-                    <i data-lucide="package"></i>
-                    <h2>Product Lab</h2>
-                </div>
-                <div class="card-body">
-                    <div class="input-group">
-                        <label>Product Name</label>
-                        <input type="text" id="prod-name" placeholder="e.g. ZenFlow Bamboo Mat">
-                    </div>
-                    <div class="input-group">
-                        <label>Key Features</label>
-                        <textarea id="prod-features"
-                            placeholder="e.g. Non-slip, 5mm thickness, biodegradable..."></textarea>
-                    </div>
-                    <div class="input-group">
-                        <label>Target Audience</label>
-                        <input type="text" id="prod-audience" placeholder="Yoga practitioners">
-                    </div>
-                    <div class="input-group">
-                        <label>Tone</label>
-                        <select id="prod-tone">
-                            <option value="Luxury">Luxury</option>
-                            <option value="Minimal">Minimal</option>
-                            <option value="Trendy">Trendy</option>
-                            <option value="Aggressive Sales">Aggressive Sales</option>
-                        </select>
-                    </div>
-                    <button class="btn-primary" id="btn-generate-product">
-                        <span>Generate Product SEO</span>
-                        <i data-lucide="rocket"></i>
-                    </button>
-                </div>
-                <div class="results-container" id="product-results">
-                    <!-- Results will be injected here -->
-                </div>
-            </div>
-
-            <!-- TOOL 3: COMPETITOR INSIGHTS -->
-            <div class="tool-card" id="competitor">
-                <div class="card-header">
-                    <i data-lucide="search"></i>
-                    <h2>Competitor Insights</h2>
-                </div>
-                <div class="card-body">
-                    <div class="input-group">
-                        <label>Competitor Product Text</label>
-                        <textarea id="comp-text"
-                            placeholder="Paste competitor description or meta data here..."></textarea>
-                    </div>
-                    <button class="btn-primary" id="btn-analyze-competitor">
-                        <span>Analyze Competitor</span>
-                        <i data-lucide="bar-chart-3"></i>
-                    </button>
-                </div>
-                <div class="results-container" id="competitor-results">
-                    <!-- Results will be injected here -->
-                </div>
-            </div>
-        </section>
-
-        <!-- EXTRA FEATURE: SEO GUIDELINES -->
-        <section class="guidelines">
-            <div class="section-title">
-                <i data-lucide="info"></i>
-                <h2>SEO Guidelines</h2>
-            </div>
-            <div class="guidelines-grid">
-                <div class="guide-item">
-                    <h3>Google Meta Title</h3>
-                    <div class="guide-value">50-60 <span class="unit">chars</span></div>
-                    <p>Ideal length for desktop and mobile visibility.</p>
-                </div>
-                <div class="guide-item">
-                    <h3>Google Meta Description</h3>
-                    <div class="guide-value">140-160 <span class="unit">chars</span></div>
-                    <p>Brief summary to encourage click-through rates.</p>
-                </div>
-                <div class="guide-item">
-                    <h3>Shopify Product Title</h3>
-                    <div class="guide-value">55-70 <span class="unit">chars</span></div>
-                    <p>Best for Shopify search and social sharing.</p>
-                </div>
-                <div class="guide-item">
-                    <h3>Product Description</h3>
-                    <div class="guide-value">300+ <span class="unit">words</span></div>
-                    <p>Thorough details help with Google semantic ranking.</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Propify AI. Ready for Shopify Brilliance.</p>
-            <div class="social-links">
-                <i data-lucide="twitter"></i>
-                <i data-lucide="github"></i>
-            </div>
-        </div>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
     <script>
