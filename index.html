@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Propify AI | Shopify SEO Growth Engine</title>
+    <title>Prodify AI | Shopify Growth OS</title>
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-9DB7BD0MHN"></script>
@@ -31,130 +31,345 @@
             <div class="header-container">
                 <div class="logo">
                     <i data-lucide="zap" class="logo-icon"></i>
-                    <span>Propify AI</span>
+                    <span>Prodify <span class="text-gradient">Growth OS</span></span>
                 </div>
                 <nav class="nav-links">
-                    <a href="https://www.getprodify.pro/home">Home</a>
+                    <a href="https://www.getprodify.pro/home" class="btn-home">Home</a>
                 </nav>
-                <button id="btn-buy-credits" class="btn-primary"
-                    style="width: auto; padding: 0.5rem 1rem; font-size: 0.85rem; margin-right: 1.5rem;">
-                    <span>Buy 500 Credits – $9</span>
-                    <i data-lucide="shopping-cart" style="width: 16px; height: 16px;"></i>
-                </button>
-                <div class="credits">
-                    <span class="credits-label">Credits:</span>
-                    <span class="credits-value" id="credit-count">3</span>
-                    <div class="credits-badge">Pro</div>
+                <div class="header-actions">
+                    <button id="btn-buy-credits" class="btn-buy" title="Add More Credits">
+                        <i data-lucide="plus-circle"></i>
+                        <span>Refill Credits</span>
+                    </button>
+                    <div class="credits">
+                        <span class="credits-label">Balance:</span>
+                        <span class="credits-value" id="credit-count">3</span>
+                        <div class="credits-badge">Pro status</div>
+                    </div>
                 </div>
             </div>
         </header>
 
         <main>
-            <section class="hero">
-                <h1>Shopify SEO <span class="text-gradient">Growth Engine</span></h1>
-                <p>Generate high-converting, SEO-optimized metadata and product descriptions in seconds.</p>
-            </section>
-
-            <section class="tools-grid">
-                <!-- TOOL 1: STORE META ARCHITECT -->
-                <div class="tool-card" id="meta-architect">
-                    <div class="card-header">
-                        <i data-lucide="layout"></i>
-                        <h2>Store Meta Architect</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="input-group">
-                            <label>Niche</label>
-                            <input type="text" id="meta-niche" placeholder="e.g. Eco-friendly Yoga Gear">
-                        </div>
-                        <div class="input-group">
-                            <label>Target Audience</label>
-                            <input type="text" id="meta-audience" placeholder="e.g. Sustainable lifestyle enthusiasts">
-                        </div>
-
-                        <div class="input-group">
-                            <label>Goal</label>
-                            <select id="meta-goal">
-                                <option value="maximize-sales">Maximize Sales</option>
-                                <option value="seo-traffic">SEO Traffic</option>
-                                <option value="brand-authority">Brand Authority</option>
-                            </select>
-                        </div>
-                        <button class="btn-primary" id="btn-generate-meta">
-                            <span>Generate Meta Tags</span>
-                            <i data-lucide="sparkles"></i>
+            <div class="os-layout" style="margin-top: 2rem;">
+                <!-- SIDEBAR NAVIGATION -->
+                <aside class="os-sidebar">
+                    <div class="sidebar-group">
+                        <span class="sidebar-label">Consulting Suites</span>
+                        <button class="nav-btn active" data-tab="seo">
+                            <i data-lucide="search"></i>
+                            <span>SEO Strategy</span>
                         </button>
-                    </div>
-
-                    <div class="results-container" id="meta-results">
-                        <!-- Results will be injected here -->
-                    </div>
-                </div>
-
-                <!-- TOOL 2: PRODUCT LAB -->
-                <div class="tool-card" id="product-lab">
-                    <div class="card-header">
-                        <i data-lucide="package"></i>
-                        <h2>Product Lab</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="input-group">
-                            <label>Product Name</label>
-                            <input type="text" id="prod-name" placeholder="e.g. ZenFlow Bamboo Mat">
-                        </div>
-                        <div class="input-group">
-                            <label>Key Features</label>
-                            <textarea id="prod-features"
-                                placeholder="e.g. Non-slip, 5mm thickness, biodegradable..."></textarea>
-                        </div>
-                        <div class="input-group">
-                            <label>Target Audience</label>
-                            <input type="text" id="prod-audience" placeholder="Yoga practitioners">
-                        </div>
-                        <div class="input-group">
-                            <label>Tone</label>
-                            <select id="prod-tone">
-                                <option value="Luxury">Luxury</option>
-                                <option value="Minimal">Minimal</option>
-                                <option value="Trendy">Trendy</option>
-                                <option value="Aggressive Sales">Aggressive Sales</option>
-                            </select>
-                        </div>
-                        <button class="btn-primary" id="btn-generate-product">
-                            <span>Generate Product SEO</span>
-                            <i data-lucide="rocket"></i>
+                        <button class="nav-btn" data-tab="conversion">
+                            <i data-lucide="trending-up"></i>
+                            <span>Conversion Optimization</span>
                         </button>
-                    </div>
-                    <div class="results-container" id="product-results">
-                        <!-- Results will be injected here -->
-                    </div>
-                </div>
-
-                <!-- TOOL 3: COMPETITOR INSIGHTS -->
-                <div class="tool-card" id="competitor">
-                    <div class="card-header">
-                        <i data-lucide="search"></i>
-                        <h2>Competitor Insights</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="input-group">
-                            <label>Competitor Product Text</label>
-                            <textarea id="comp-text"
-                                placeholder="Paste competitor description or meta data here..."></textarea>
-                        </div>
-                        <button class="btn-primary" id="btn-analyze-competitor">
-                            <span>Analyze Competitor</span>
+                        <button class="nav-btn" data-tab="ads">
+                            <i data-lucide="megaphone"></i>
+                            <span>Ads & Traffic</span>
+                        </button>
+                        <button class="nav-btn" data-tab="profit">
                             <i data-lucide="bar-chart-3"></i>
+                            <span>Profit & Scaling</span>
                         </button>
                     </div>
-                    <div class="results-container" id="competitor-results">
-                        <!-- Results will be injected here -->
+
+                    <div class="sidebar-group">
+                        <span class="sidebar-label">Content Factory</span>
+                        <button class="nav-btn" data-tab="content">
+                            <i data-lucide="layout"></i>
+                            <span>Meta Architect</span>
+                        </button>
+                        <button class="nav-btn" data-tab="content">
+                            <i data-lucide="flask-conical"></i>
+                            <span>Product Lab</span>
+                        </button>
+                        <button class="nav-btn" data-tab="content">
+                            <i data-lucide="users"></i>
+                            <span>Competitor Insights</span>
+                        </button>
+                    </div>
+
+                    <div class="sidebar-group context-group">
+                        <span class="sidebar-label">Expert Context Hub</span>
+                        <div class="input-minimal">
+                            <label>Product/Niche Name</label>
+                            <input type="text" id="global-niche" placeholder="e.g. Bamboo Yoga Mat">
+                        </div>
+                        <div class="input-minimal">
+                            <label>Target Audience</label>
+                            <input type="text" id="global-audience" placeholder="e.g. Eco-conscious yogis">
+                        </div>
+                        <p class="context-hint">Fill once to feed all expert tools below.</p>
+                    </div>
+                </aside>
+
+                <!-- TOOL CONTENT AREA -->
+                <div class="os-content">
+                    <!-- SEO TOOLS TAB -->
+                    <div class="tab-pane active" id="tab-seo">
+                        <div class="section-header">
+                            <h2>Strategic SEO Engine</h2>
+                            <p>Analyzing search intent and competition for ranking dominance.</p>
+                        </div>
+                        <div class="seo-dashboard-layout">
+                            <div class="seo-main-column">
+                                <div class="tool-action-card featured-card" id="tool-blueprint">
+                                    <div class="card-featured-badge">Flagship Tool</div>
+                                    <h3>AI Store Growth Blueprint</h3>
+                                    <p>Professional consultant-grade scaling strategy (10 credits)</p>
+
+                                    <div class="card-inputs">
+                                        <div class="input-minimal">
+                                            <label>Price ($)</label>
+                                            <input type="text" id="flag-price" placeholder="e.g. 49.99">
+                                        </div>
+                                        <div class="input-minimal">
+                                            <label>Niche</label>
+                                            <input type="text" id="flag-niche" placeholder="e.g. Yoga & Wellness">
+                                        </div>
+                                        <div class="input-minimal">
+                                            <label>Problem (Optional)</label>
+                                            <textarea id="flag-problem" placeholder="e.g. Low conversion..."></textarea>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn-tool" id="btn-generate-blueprint">
+                                        <span>Generate Blueprint</span>
+                                        <i data-lucide="wand-2"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="seo-grid-column">
+                                <div class="tool-action-card featured-card">
+                                    <h3>Keyword Strategy</h3>
+                                    <p>Deep intent analysis (1 credit)</p>
+                                    <button class="btn-tool" id="btn-seo-title">Analyze Intent <i
+                                            data-lucide="eye"></i></button>
+                                </div>
+                                <div class="tool-action-card featured-card">
+                                    <h3>Full Site Meta Architect</h3>
+                                    <p>Strategic site mapping (1 credit)</p>
+                                    <button class="btn-tool" id="btn-generate-meta">Generate Full Metadata <i
+                                            data-lucide="layout"></i></button>
+                                </div>
+                                <div class="tool-action-card premium">
+                                    <h3>Strategic Product Desc</h3>
+                                    <p>Keyword-rich & persuasive (3 credits)</p>
+                                    <button class="btn-tool" id="btn-seo-desc">Generate <i
+                                            data-lucide="file-text"></i></button>
+                                </div>
+                                <div class="tool-action-card premium">
+                                    <h3>Semantic FAQ Schema</h3>
+                                    <p>Answer engine optimization (3 credits)</p>
+                                    <button class="btn-tool" id="btn-seo-faq">Generate <i
+                                            data-lucide="list"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONTENT FACTORY TAB -->
+                    <div class="tab-pane" id="tab-content">
+                        <div class="section-header">
+                            <h2>Prodify Content Factory</h2>
+                            <p>Build premium assets and analyze competitor dominance.</p>
+                        </div>
+                        <div class="seo-dashboard-layout">
+                            <div class="seo-main-column">
+                                <div class="tool-action-card featured-card">
+                                    <div class="card-featured-badge">Featured Tool</div>
+                                    <h3>Product Lab</h3>
+                                    <p>Comprehensive product SEO & copy (3 credits)</p>
+
+                                    <div class="card-inputs">
+                                        <div class="input-minimal">
+                                            <label>Product Name</label>
+                                            <input type="text" id="lab-prod-name" placeholder="e.g. ZenFlow Bamboo Mat">
+                                        </div>
+                                        <div class="input-minimal">
+                                            <label>Key Features</label>
+                                            <textarea id="lab-features"
+                                                placeholder="e.g. Eco-friendly, non-slip..."></textarea>
+                                        </div>
+                                        <div class="input-minimal">
+                                            <label>Target Audience</label>
+                                            <input type="text" id="lab-audience" placeholder="e.g. Eco-conscious yogis">
+                                        </div>
+                                        <div class="input-minimal">
+                                            <label>Tone</label>
+                                            <select id="lab-tone">
+                                                <option value="Luxury">Luxury</option>
+                                                <option value="Persuasive">Persuasive</option>
+                                                <option value="Playful">Playful</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <button class="btn-tool" id="btn-lab-gen">
+                                        <span>Generate Product SEO</span>
+                                        <i data-lucide="zap"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="seo-grid-column">
+                                <div class="tool-action-card featured-card">
+                                    <h3>Store Meta Architect</h3>
+                                    <p>High-conversion meta tags (1 credit)</p>
+                                    <div class="card-inputs">
+                                        <div class="input-minimal">
+                                            <label>Niche</label>
+                                            <input type="text" id="meta-niche" placeholder="e.g. Yoga Gear">
+                                        </div>
+                                        <div class="input-minimal">
+                                            <label>Target Audience</label>
+                                            <input type="text" id="meta-audience" placeholder="Target demographic">
+                                        </div>
+                                        <div class="input-minimal">
+                                            <label>Goal</label>
+                                            <select id="meta-goal">
+                                                <option value="Maximize Sales">Maximize Sales</option>
+                                                <option value="Brand Awareness">Brand Awareness</option>
+                                                <option value="SEO Rank">SEO Rank</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <button class="btn-tool" id="btn-meta-gen">
+                                        <span>Generate Meta Tags</span>
+                                        <i data-lucide="layout"></i>
+                                    </button>
+                                </div>
+                                <div class="tool-action-card featured-card">
+                                    <h3>Competitor Insights</h3>
+                                    <p>Analyze winning competitor copy (3 credits)</p>
+                                    <div class="card-inputs">
+                                        <div class="input-minimal">
+                                            <label>Competitor Product Text</label>
+                                            <textarea id="comp-text" style="height: 120px;"
+                                                placeholder="Paste competitor description here..."></textarea>
+                                        </div>
+                                    </div>
+                                    <button class="btn-tool" id="btn-comp-gen">
+                                        <span>Analyze Competitor</span>
+                                        <i data-lucide="search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- CONVERSION TOOLS TAB -->
+                    <div class="tab-pane" id="tab-conversion">
+                        <div class="section-header">
+                            <h2>Conversion Psychology</h2>
+                            <p>Scientific methods to turn visitors into buyers.</p>
+                        </div>
+                        <div class="tools-grid-os">
+                            <div class="tool-action-card premium">
+                                <h3>Psychology-Driven Copy</h3>
+                                <p>Sales-focused consulting (3 credits)</p>
+                                <button class="btn-tool" id="btn-conv-desc">Generate <i
+                                        data-lucide="brain"></i></button>
+                            </div>
+                            <div class="tool-action-card">
+                                <h3>Emotional Trigger Gen</h3>
+                                <p>Identify core desires (1 credit)</p>
+                                <button class="btn-tool" id="btn-conv-aida">Analzye Triggers <i
+                                        data-lucide="heart"></i></button>
+                            </div>
+                            <div class="tool-action-card">
+                                <h3>Scarcity Strategy</h3>
+                                <p>Ethical urgency planning (1 credit)</p>
+                                <button class="btn-tool" id="btn-conv-urgency">Generate <i
+                                        data-lucide="clock"></i></button>
+                            </div>
+                            <div class="tool-action-card">
+                                <h3>Authority & Trust</h3>
+                                <p>Social proof strategy (1 credit)</p>
+                                <button class="btn-tool" id="btn-conv-trust">Plan Authority <i
+                                        data-lucide="shield-check"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- ADS & TRAFFIC TAB -->
+                    <div class="tab-pane" id="tab-ads">
+                        <div class="section-header">
+                            <h2>Growth Ads Strategy</h2>
+                            <p>Scroll-stopping hooks and market-tested angles.</p>
+                        </div>
+                        <div class="tools-grid-os">
+                            <div class="tool-action-card premium">
+                                <h3>FB/Meta Ad Consultant</h3>
+                                <p>Hooks & copy angles (3 credits)</p>
+                                <button class="btn-tool" id="btn-ads-fb">Generate <i
+                                        data-lucide="facebook"></i></button>
+                            </div>
+                            <div class="tool-action-card premium">
+                                <h3>TikTok Viral Concept</h3>
+                                <p>Short-form storytelling (3 credits)</p>
+                                <button class="btn-tool" id="btn-ads-tt">Generate <i data-lucide="video"></i></button>
+                            </div>
+                            <div class="tool-action-card premium">
+                                <h3>Lifecycle Email Strategy</h3>
+                                <p>Retention & sequences (3 credits)</p>
+                                <button class="btn-tool" id="btn-ads-email">Generate <i data-lucide="mail"></i></button>
+                            </div>
+                            <div class="tool-action-card">
+                                <h3>Abandoned Cart Genius</h3>
+                                <p>Recovery psychology (1 credit)</p>
+                                <button class="btn-tool" id="btn-ads-cart">Generate <i
+                                        data-lucide="shopping-cart"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- PROFIT TOOLS TAB -->
+                    <div class="tab-pane" id="tab-profit">
+                        <div class="section-header">
+                            <h2>Strategic Scaling</h2>
+                            <p>Unit economics and growth roadmap planning.</p>
+                        </div>
+                        <div class="tools-grid-os">
+                            <div class="tool-action-card premium">
+                                <h3>Economic Health Check</h3>
+                                <p>Break-even & margins (3 credits)</p>
+                                <button class="btn-tool" id="btn-calc-be">Analyze <i
+                                        data-lucide="activity"></i></button>
+                            </div>
+                            <div class="tool-action-card premium">
+                                <h3>Price Optimization</h3>
+                                <p>Maximize profit margins (3 credits)</p>
+                                <button class="btn-tool" id="btn-calc-margin">Optimize <i
+                                        data-lucide="trending-up"></i></button>
+                            </div>
+                            <div class="tool-action-card premium">
+                                <h3>Efficiency Analysis</h3>
+                                <p>ROAS & MER strategy (3 credits)</p>
+                                <button class="btn-tool" id="btn-calc-roas">Analyze <i
+                                        data-lucide="bar-chart-2"></i></button>
+                            </div>
+                            <div class="tool-action-card flagship-mini">
+                                <h3>3-Phase Scaling Road</h3>
+                                <p>Scaling roadmap (5 credits)</p>
+                                <button class="btn-tool" id="btn-calc-budget">Build Roadmap <i
+                                        data-lucide="map"></i></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RESULTS DISPLAY -->
+                    <div class="os-results" id="os-results-container">
+                        <div class="results-placeholder">
+                            <i data-lucide="terminal"></i>
+                            <p>Generated output will appear here...</p>
+                        </div>
                     </div>
                 </div>
-            </section>
+            </div>
 
-            <!-- EXTRA FEATURE: SEO GUIDELINES -->
-            <section class="guidelines">
+            <!-- SEO GUIDELINES (Optional/Legacy kept) -->
+            <section class="guidelines" style="margin-top: 4rem;">
                 <div class="section-title">
                     <i data-lucide="info"></i>
                     <h2>SEO Guidelines</h2>
@@ -163,22 +378,22 @@
                     <div class="guide-item">
                         <h3>Google Meta Title</h3>
                         <div class="guide-value">50-60 <span class="unit">chars</span></div>
-                        <p>Ideal length for desktop and mobile visibility.</p>
+                        <p>Ideal length for visibility.</p>
                     </div>
                     <div class="guide-item">
-                        <h3>Google Meta Description</h3>
+                        <h3>Meta Description</h3>
                         <div class="guide-value">140-160 <span class="unit">chars</span></div>
-                        <p>Brief summary to encourage click-through rates.</p>
+                        <p>CTR-optimized summary.</p>
                     </div>
                     <div class="guide-item">
-                        <h3>Shopify Product Title</h3>
+                        <h3>Shopify Title</h3>
                         <div class="guide-value">55-70 <span class="unit">chars</span></div>
-                        <p>Best for Shopify search and social sharing.</p>
+                        <p>Best for store search.</p>
                     </div>
                     <div class="guide-item">
-                        <h3>Product Description</h3>
+                        <h3>Descriptions</h3>
                         <div class="guide-value">300+ <span class="unit">words</span></div>
-                        <p>Thorough details help with Google semantic ranking.</p>
+                        <p>Semantic ranking boost.</p>
                     </div>
                 </div>
             </section>
@@ -186,7 +401,7 @@
 
         <footer>
             <div class="footer-bottom">
-                <p>&copy; 2026 Propify AI. Ready for Shopify Brilliance.</p>
+                <p>&copy; 2026 Prodify AI. Growth OS v2.0</p>
                 <div class="social-links">
                     <i data-lucide="twitter"></i>
                     <i data-lucide="github"></i>
@@ -195,7 +410,7 @@
         </footer>
     </div>
 
-    <!-- PAYMENT MODAL -->
+    <!-- PAYMENT MODAL (KEPT UNCHANGED IN LOGIC) -->
     <div class="modal-overlay" id="payment-modal">
         <div class="modal-content" style="position: relative;">
             <button class="modal-close" id="btn-close-modal">
@@ -204,7 +419,7 @@
             <div class="modal-header">
                 <i data-lucide="credit-card"></i>
                 <h2>Credits Exhausted</h2>
-                <p>Refill your balance to continue using professional SEO tools.</p>
+                <p>Refill your balance to continue using Growth OS tools.</p>
             </div>
             <div class="card-body">
                 <a href="https://paypal.me/Aimoneymaker/9" target="_blank" class="btn-primary"
