@@ -410,32 +410,39 @@
         </footer>
     </div>
 
-    <!-- PAYMENT MODAL (KEPT UNCHANGED IN LOGIC) -->
+    <!-- PAYMENT MODAL -->
     <div class="modal-overlay" id="payment-modal">
-        <div class="modal-content" style="position: relative;">
+        <div class="modal-content">
             <button class="modal-close" id="btn-close-modal">
                 <i data-lucide="x"></i>
             </button>
             <div class="modal-header">
                 <i data-lucide="credit-card"></i>
-                <h2>Credits Exhausted</h2>
-                <p>Refill your balance to continue using Growth OS tools.</p>
+                <h2>Credits Required</h2>
+                <p>You need credits to generate this result. Add credits now or cancel to return.</p>
             </div>
             <div class="card-body">
                 <a href="https://paypal.me/Aimoneymaker/9" target="_blank" class="btn-primary"
-                    style="text-decoration: none; margin-bottom: 2rem;">
+                    style="text-decoration: none; margin-bottom: 2rem; width: 100%;">
                     <span>Pay $9 via PayPal</span>
                     <i data-lucide="external-link"></i>
                 </a>
 
-                <div class="input-group" style="margin-top: 1rem;">
-                    <label>Transaction ID</label>
-                    <input type="text" id="txn-id-modal" placeholder="Already paid? Add PayPal Transaction ID">
+                <div class="input-group" style="margin-top: 1rem; text-align: left;">
+                    <label
+                        style="color: var(--accent); font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Transaction
+                        ID</label>
+                    <input type="text" id="txn-id-modal" placeholder="Already paid? Add PayPal Transaction ID"
+                        style="width: 100%; padding: 0.75rem; background: var(--bg-input); border: 1px solid var(--border); border-radius: 8px; color: white; margin-top: 0.5rem;">
                 </div>
 
-                <button class="btn-primary" id="btn-activate-modal">
+                <button class="btn-primary" id="btn-activate-modal" style="width: 100%; margin-top: 1rem;">
                     <span>Activate 500 Credits</span>
                     <i data-lucide="zap"></i>
+                </button>
+
+                <button class="btn-secondary" id="btn-cancel-modal">
+                    <span>Cancel / Back</span>
                 </button>
             </div>
         </div>

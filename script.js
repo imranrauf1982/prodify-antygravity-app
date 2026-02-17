@@ -16,16 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const paymentModal = document.getElementById('payment-modal');
         const dashboard = document.getElementById('dashboard-container');
 
-        const allToolBtns = document.querySelectorAll('.btn-tool, .btn-primary');
-
         if (creditDisplay) creditDisplay.textContent = credits;
 
         if (credits <= 0) {
-            allToolBtns.forEach(btn => { if (btn) btn.disabled = true; });
             if (paymentModal) paymentModal.classList.add('active');
             if (dashboard) dashboard.classList.add('dashboard-blur');
         } else {
-            allToolBtns.forEach(btn => { if (btn) btn.disabled = false; });
             if (paymentModal) paymentModal.classList.remove('active');
             if (dashboard) dashboard.classList.remove('dashboard-blur');
         }
@@ -73,12 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const btnCloseModal = document.getElementById('btn-close-modal');
-    if (btnCloseModal) {
-        btnCloseModal.addEventListener('click', () => {
-            document.getElementById('payment-modal').classList.remove('active');
-            document.getElementById('dashboard-container').classList.remove('dashboard-blur');
-        });
-    }
+    const btnCancelModal = document.getElementById('btn-cancel-modal');
+
+    const closeModal = () => {
+        const paymentModal = document.getElementById('payment-modal');
+        const dashboard = document.getElementById('dashboard-container');
+        if (paymentModal) paymentModal.classList.remove('active');
+        if (dashboard) dashboard.classList.remove('dashboard-blur');
+    };
+
+    if (btnCloseModal) btnCloseModal.addEventListener('click', closeModal);
+    if (btnCancelModal) btnCancelModal.addEventListener('click', closeModal);
 
     updateCreditsUI();
 
